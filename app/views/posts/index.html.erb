@@ -1,20 +1,25 @@
-<h1>ブログ一覧</h1>
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>tweeter</th>
-    <th>内容</tr>
-   </tr>
- <% @posts.each do |post| %>
-    <tr>
-      
-       <td><%= post.content %></td>
-       <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
-      
-
-    </tr>
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+ <div class="blog_wrapper">
+     <div class="tweet_header">
+        <div class="tweet_author-name" style="backgroud-color:pink">
+              UFO
+         </div>
+        <div class="tweet_author-nickname">
+          @ufo.com
+        </div>
+         <div class="tweet_post-time">
+            <%= post.created_at.to_s(:datetime_jp) %>
+         </div>
+       </div>
+       <div class = "tweet_content">
+            <%= post.content %><br><br>
+           <%= link_to '確認', post_path(post.id),class:"btn-default1" %>
+       </div>
+      </div>
+    </div>
+  </div>
  <% end %>
-</table>
-<br>
-<%= link_to '新しく投稿を作成する', new_post_path %>
+ 
+      
+        

@@ -4,12 +4,158 @@
     <title>SnsApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content = "width=device-width">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
   </head>
-
   <body>
-    <%= yield %>
-  </body>
+      <header class='header-menu'>
+    
+        <ul class="top-menu">
+          <li> 
+          <%# app/assets/images %>
+          <%= image_tag "bird.jpg", alt: "icon", id: "assets", class: "image", width: "40px" %>
+          </li>
+         <li><a href='http://localhost:3000/posts'>Home</a></li>
+         <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </header>
+   <div class="container">
+      <div class="container_side_menu">
+  
+       <div class="side_menu">
+      
+         <div class='side_menu-item side_menu--active'>
+         <%# app/assets/images %>
+         <%= image_tag "home.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Twitter Clone App
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "explore.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Explore
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "notification.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Notification 
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "message.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Messages
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "bookmark.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Bookmarks
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "list.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Lists
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "login.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         Profile 
+         </div>
+
+         <div class='side_menu-item'>
+         <%# app/assets/images %>
+         <%= image_tag "more.png", alt: "icon", id: "assets", class: "image", width: "40px" %>
+         More 
+         </div>
+
+         <div class="side_menu-item">
+         <input id="submit_button" type="submit" onclick="location.href='http://localhost:3000/posts/new'"  value="投稿する">
+         </div>
+        </div>
+      </div>
+      <div class='layout_main'>
+         <div class="tweet">
+         <%# app/assets/images %>
+         <%= image_tag "UFO.png", alt: "icon", id: "assets", class: "image", width: "100px",height:"80px" %>
+          <div class="tweet_main">
+              <div class="tweet_header">
+                <div class="tweet_author-name">
+                  UFO
+                </div>
+                <div class="tweet_author-nickname">
+                 @ufo.com
+                </div>
+                <div class="tweet_post-time">
+                  Timestamps
+                </div>
+              </div>
+               <div class = "tweet_content">
+                   <h3> What's happening'?</h3>
+                   <input id="submit_button1" type="submit"  onclick="location.href='http://localhost:3000/posts/new'"  value="投稿する">
+                   </div>
+                  </div>
+                </div>
+               <div class="tweet"> 
+               <%= yield %>
+               </div>
+             
+            </div>
+          </div>
+        </div>
+          <div class='layout_right-sidebar-container'>
+          <div class='layout_right-sidebar'>
+             <div class="trends-foryou">
+              <div class="trends-foryou-block">
+                <div class="trends-foryou-heading">
+                   Trends for you
+                </div>
+              </div>
+              <div class="trends-foryou-block">
+                <div class="trends-foryou-maininfo">
+                 Trending From UK
+                </div>
+                 <div class="trends-foryou-trendname">
+                <a href="https://www.bbc.com/" ></a>
+                <div class="trends-foryou-footing">
+                  2,200 tweets
+                </div>
+              </div>
+           </div>
+            <div class="who-to-follow">
+              <div class="who-to-follow__block">
+                <div class="who-to-follow__heading">
+                   Who to follow
+                </div>
+              </div>
+              <div class="who-to-follow__block">
+                 <div class="who-to-follow__content">
+                 <div>
+                    <div class="who-to-follow__author-name">
+                    Becki
+                  </div>
+                  <div class="who-to-follow__author-slug">
+                    @sponsor
+                  </div>
+                </div>
+                <div class="who-to-follow__button">
+                  Follow
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       <footer class="footer">
+          <p>Copyright © 2018 Original All RIGHTS RESERVED.</p>
+        </footer>
+</div>
+</body>
 </html>
